@@ -1,3 +1,11 @@
+body {
+  padding: 20px;
+}
+
+h2 {
+  color: rgb(155, 56, 105);
+}
+
 .App {
   text-align: center;
 }
@@ -11,6 +19,13 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+body {
+  background-color: #f7f7f7;
+}
+
+.container {
+  margin-top: 100px;
 }
 
 .App-header {
