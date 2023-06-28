@@ -51,3 +51,23 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.container {
+ 
+  padding: 20px;
+  background-color: #5fe5f1;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  color: #123456;
+}
