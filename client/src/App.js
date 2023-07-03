@@ -1,36 +1,28 @@
 
 import './App.css';
-// import Books from "./components/Books.js";
-// import About from "./components/About.js";
-import Navbar from './components/Navbar.js';
-import Register from './components/Register.js';
-import Login from "./components/Login.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./components/pages/About.js";
+import Navbar from './components/pages/Navbar.js';
+import Register from './components/pages/Register.js';
+import Login from "./components/pages/Login.js";
+import Profile from "./components/pages/Profile";
 
-// const books = [
-//   {
-//       id:3456,
-//       title :"This site helps you with new friends"
-//   },
-//   {
-//       id:51531,
-//       title :"Helps you with new posts"
-//   },
-//   {
-//       id:3456,
-//       title :"Helps you with the new trends"
-//   },
-// ]
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <h1>Welcome to world of Social Media site!!</h1>     
-     {/* <Books books={books}/> */}
-      {/* <About/> */}
-  
-     <Register/>
-     <Login/>
+     
+      <BrowserRouter>
+          <Routes>
+                          <Route path='/' element={<Navbar />}>
+                          <Route index element={<About />}/>
+              <Route path="login" element={<Login/>}/>
+              <Route path="register" element={<Register />}/>
+              <Route path="profile" element={<Profile/>}/>
+            </Route>
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
