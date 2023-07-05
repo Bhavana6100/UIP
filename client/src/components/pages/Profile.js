@@ -45,9 +45,11 @@ const Profile = () => {
   };
 
   return (
+    <body class="page6">
+    <center>
     <div className="profile-container">
       <div>
-        <h2>Profile</h2>
+        <h2>Profile Page</h2>
         <h3>Welcome, {username}!</h3>
 
         <div>
@@ -59,7 +61,7 @@ const Profile = () => {
               {posts.map((post, index) => (
                 <li key={index}>
                   {post}
-                  <button onClick={() => handleDeletePost(index)}>Delete</button>
+                  <button  style={{marginLeft:'5em'}} onClick={() => handleDeletePost(index)}>Delete</button>
                 </li>
               ))}
             </ul>
@@ -70,15 +72,17 @@ const Profile = () => {
           <label>
             Create a new post:
             <input
-              style={{ marginLeft: '10em', padding: '2rem' }}
+              style={{ marginLeft: '8em' }}
               type="text"
               value={newPost}
               onChange={handlePostChange}
             />
           </label>
           <br />
+          <br></br>
+          <br></br>
           <button type="submit">Upload</button>
-          <button style={{ marginLeft: '10em' }} type="reset" onClick={() => setNewPost('')}>
+          <button style={{ marginLeft: '6em' }} type="reset" onClick={() => setNewPost('')}>
             Reset
           </button>
           <Link
@@ -97,6 +101,8 @@ const Profile = () => {
         </form>
       </div>
     </div>
+    </center>
+    </body>
   );
 };
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { fetchData } from "../../main.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -58,10 +58,30 @@ const LoginForm = () => {
                 value={password}
                 placeholder="Enter password"
               />
+              <br>
+              </br>
+              <br>
+              </br>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn ">
               Login
             </button>
+<br></br>
+<br></br>
+            <div class="text-center p-t-12">
+                        <span class="txt1">
+                        Forgot
+                        </span>
+                        <Link style={{ marginLeft: 10 + "em", padding: "2erm" }} class="txt2" href="#" > Username / Password?   </Link> 
+                    </div>
+                        <br></br>
+                        <tr><td>    <div>
+                          <span class="txt1">
+                            New User
+                            </span>
+                           <Link class="txt2" to="/register" style={{ marginLeft: 10 + "em", padding: "2erm" }} target="_blank"> Create your Account  </Link>
+                       </div></td></tr>
+
           </form>
         </div>
       </center>
