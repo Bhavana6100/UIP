@@ -10,7 +10,7 @@ const Profile = () => {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
 
-  // Load posts from local storage when component mounts
+  
   useEffect(() => {
     const storedPosts = localStorage.getItem(`${username}-userPosts`);
     if (storedPosts) {
