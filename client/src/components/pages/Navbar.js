@@ -36,7 +36,6 @@ const Navbar = ({ isLoggedIn }) =>{
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">Profile</Link>
               </li>
-              {/* Add more authenticated-only links here */}
             </>
           )}
         </ul>
