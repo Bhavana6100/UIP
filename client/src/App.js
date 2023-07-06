@@ -6,23 +6,24 @@ import Navbar from './components/pages/Navbar.js';
 import Register from './components/pages/Register.js';
 import Login from "./components/pages/Login.js";
 import Profile from "./components/pages/Profile";
-
+import { UserProvider } from './context/userContext';
 
 
 function App() {
   return (
     <div className="App">
-     
+<UserProvider>
       <BrowserRouter>
           <Routes>
-                          <Route path='/' element={<Navbar />}>
-                          <Route index element={<About />}/>
+              <Route path='/' element={<Navbar />}>
+              <Route index element={<About />}/>
               <Route path="login" element={<Login/>}/>
               <Route path="register" element={<Register />}/>
               <Route path="profile" element={<Profile/>}/>
             </Route>
           </Routes>
         </BrowserRouter>
+        </UserProvider>
     </div>
   );
 }

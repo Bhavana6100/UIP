@@ -1,8 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../context/userContext.js";
 
-const Navbar = ({ isLoggedIn }) => (
+
+const Navbar = ({ isLoggedIn }) =>{
+  return (
   <div>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <Link className="navbar-brand" to="/">
         My Website
       </Link>
@@ -43,5 +47,6 @@ const Navbar = ({ isLoggedIn }) => (
     <Outlet />
   </div>
 );
+          };
 
 export default Navbar;

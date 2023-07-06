@@ -7,7 +7,8 @@ const About = () => {
       
                 <div id="border">
                   <center>
-
+<br></br>
+<br></br>
                 <br></br>
                   <h2> Hi there!!!..</h2>
                     <br></br>
