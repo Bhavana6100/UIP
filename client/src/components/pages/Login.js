@@ -1,11 +1,7 @@
 
-
 import React, { useState } from 'react';
 import { fetchData } from "../../main.js";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import UserContext from "../../context/userContext.js";
- 
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -32,7 +28,6 @@ const LoginForm = () => {
         console.log(error);
       });
   };
-
   return (
     <body className="page2">
       <center>

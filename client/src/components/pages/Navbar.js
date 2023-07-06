@@ -1,6 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import { useContext } from "react";
-import UserContext from "../../context/userContext.js";
 
 
 const Navbar = ({ isLoggedIn }) =>{

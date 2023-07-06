@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useContext } from "react";
-import UserContext from "../../context/userContext.js";
 
 
 const Profile = () => {
-  const location = useLocation();
-  const { username } = location.state || {};
+   const location = useLocation();
+  const { username } = location.state;
+
 
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
@@ -41,11 +40,17 @@ const Profile = () => {
   };
 
 
+  // const handleCancel = () => {
+  //   localStorage.setItem('userPosts', JSON.stringify(posts)); 
+  //   setPosts([]); 
+  //   setNewPost('');
+  // };
   const handleCancel = () => {
-    localStorage.setItem('userPosts', JSON.stringify(posts)); // Save posts to local storage
-    setPosts([]); // Reset posts to an empty array
-    setNewPost(''); // Reset new post input value
+    localStorage.setItem(`${username}-userPosts`, JSON.stringify(posts));
+    setPosts([]);
+    setNewPost('');
   };
+  
 
   return (
     <body class="page6">

@@ -1,31 +1,31 @@
 import { fetchData } from "../../main.js";
-// import { useState } from "react";
+import { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import UserContext from "../../context/userContext.js";
 
 const RegisterForm = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useContext(UserContext);
-  //   firstname: "",
-  //   lastname: "",
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  //   password2: ""
-  // });
+  const navigate= useNavigate();
+  const [user, setUser] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    password2:""
+  });
 
-  const { firstname, lastname, username, email, password, password2 } = user;
+  const { firstname, lastname, username, email, password,password2 } = user;
 
-  const onChange = (e) => updateUser(e.target.name, e.target.value );
+  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
+  
   const onSubmit = (e) => {
     e.preventDefault();
 
     fetchData("/user/register", user, "POST")
       .then((data) => {
         if (!data.message) {
-          navigate("/profile");
+          // navigate("/profile");
+          navigate("/profile", { state: { username } });
           console.log(data);
         }
       })

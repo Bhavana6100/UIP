@@ -5,13 +5,13 @@ const UserContext = createContext();
 export function UserProvider({children}) {
 
   const [user, setUser] = useState({
-    firstname: "",
-    lastname: "",
+    firstname:"",
+    lastname:"",
     username: "",
-    email: "",
+    email:"",
     password: "",
     password2: "",
-    authenticated: false
+    authenticated: true
   })
 
   const updateUser = (name, value) => {
